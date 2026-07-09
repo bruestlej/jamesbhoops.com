@@ -1,0 +1,12 @@
+# Hostinger (Apache / LiteSpeed): send Permissions-Policy for Square / Google Pay embeds.
+# If the site returns 500, your plan may not allow mod_headers — remove this block.
+<IfModule mod_headers.c>
+  Header set Permissions-Policy "payment=*"
+</IfModule>
+
+# Optional: short cache for hashed Vite assets (safe with content-hashed filenames).
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+</IfModule>
