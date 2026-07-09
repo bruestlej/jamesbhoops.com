@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 
 import { btnPrimary } from "@/components/ui/buttonClasses";
@@ -34,6 +35,12 @@ export default function SiteHeader() {
                 {link.label}
               </a>
             ))}
+            <Link
+              to="/guide"
+              className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+            >
+              Free Guide
+            </Link>
           </nav>
 
           <div className="hidden md:block">
@@ -70,6 +77,13 @@ export default function SiteHeader() {
                   {link.label}
                 </a>
               ))}
+              <Link
+                to="/guide"
+                className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Free Guide
+              </Link>
               <a
                 href="#book"
                 className={`${btnPrimary} mt-2 w-fit`}

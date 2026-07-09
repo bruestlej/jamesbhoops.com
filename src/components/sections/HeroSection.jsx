@@ -1,4 +1,5 @@
 import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 import { btnOutlineLg, btnPrimaryLg } from "@/components/ui/buttonClasses";
 
@@ -26,9 +27,9 @@ export default function HeroSection() {
             Book Your Free Session
             <ArrowRight className="h-4 w-4 shrink-0" aria-hidden />
           </a>
-          <a href="#about" className={btnOutlineLg}>
-            Learn More
-          </a>
+          <Link to="/guide" className={btnOutlineLg}>
+            Get the Free Guide
+          </Link>
         </div>
       </div>
     </section>
