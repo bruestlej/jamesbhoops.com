@@ -1,3 +1,13 @@
+# SPA fallback: direct visits to /guide, /guide/thanks, etc. serve index.html.
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+  RewriteRule ^index\.html$ - [L]
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule . /index.html [L]
+</IfModule>
+
 # Hostinger (Apache / LiteSpeed): send Permissions-Policy for Square / Google Pay embeds.
 # If the site returns 500, your plan may not allow mod_headers — remove this block.
 <IfModule mod_headers.c>
